@@ -3,8 +3,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-" Plug '907th/vim-auto-save'
-" Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'scrooloose/nerdcommenter'
@@ -16,18 +14,21 @@ Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
 call plug#end()
 
+" Plug 'joshdick/onedark.vim'
+" let g:auto_save = 1
+syntax on
+" colorscheme onedark
+" colorscheme darcula
+colorscheme molokai
+set termguicolors
 set ignorecase
 set smartcase
 set hlsearch
-
-" let g:auto_save = 1
-syntax enable
 set ruler
 set number
 filetype indent on
 filetype plugin on
 set autoindent
-
 set cursorline
 
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
@@ -43,13 +44,12 @@ set tabstop=4
 let g:qs_highlight_on_keys = ['f', 'F']
 
 " config for airline
-let g:airline_theme='onedark'
+let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 2
 
 noremap <F9> :vertical resize +10<CR>
 noremap <F8> :vertical resize -10<CR>
 
-nmap <F6> :NERDTreeToggle<CR>
 nnoremap <C-b> :Buffers<Cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-a> :Rg<Cr>
@@ -57,6 +57,8 @@ nnoremap <C-a> :Rg<Cr>
 let g:fzf_layout = {'down':'40%'}
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
+" coc-explorer
+nnoremap <space>e :CocCommand explorer<CR>
 " config for mapping tab
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -134,12 +136,6 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " configure cursor
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 if &term =~ "xterm\\|rxvt"
    " use an orange cursor in insert mode
@@ -150,3 +146,9 @@ if &term =~ "xterm\\|rxvt"
    silent! let &t_EI = "\e[2 q\e]12;green\x7"
    silent !echo -ne "\033]12;green\007"
 endi
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
