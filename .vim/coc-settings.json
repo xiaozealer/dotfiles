@@ -1,0 +1,8 @@
+ {                
+      "coc.preferences.formatOnSaveFiletypes": ["css", "json", "markdown", "python"],
+      "diagnostic.errorSign": "✘",
+     "diagnostic.warningSign": "⚠",
+     "diagnostic.infoSign": "I",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/local/bin/black",
+  }
