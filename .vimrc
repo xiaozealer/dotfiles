@@ -12,6 +12,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Plug 'joshdick/onedark.vim'
@@ -19,7 +20,10 @@ call plug#end()
 syntax on
 " colorscheme onedark
 " colorscheme darcula
-colorscheme molokai
+" colorscheme molokai
+colorscheme gruvbox
+set incsearch
+" set cc=80
 set termguicolors
 set ignorecase
 set smartcase
