@@ -23,6 +23,8 @@ syntax on
 " colorscheme onedark
 " colorscheme molokai
 colorscheme gruvbox
+set background=dark
+
 set incsearch
 set exrc "auto source .vimrc file
 " set colorcolumn=80

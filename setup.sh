@@ -50,10 +50,10 @@ ln -s -f ~/configs/coc ~/.config/coc
 vim -c "CocInstall"
 
 # setup tmux config
-#cd
 if [ ! -e ~/.tmux ]; then
+  cd
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
-  cp .tmux/.tmux.conf.local ~/
+  cp .tmux/.tmux.conf.local .
   echo "set -g default-terminal \"xterm-256color\"" >> ~/.tmux.conf
 fi
