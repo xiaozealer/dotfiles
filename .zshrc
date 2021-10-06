@@ -13,7 +13,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #export LSCOLORS=GxFxCxDxBxegedabagace
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/zile/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 # export PATH="/Users/zile/anaconda3/bin:$PATH"  # commented out by conda initialize
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -75,7 +75,8 @@ esac
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git,
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
