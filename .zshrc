@@ -135,3 +135,6 @@ export BAT_THEME="TwoDark"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias ws10="ssh xiaozile@10.122.94.10"
+alias ws197="ssh xiaozile@10.122.94.197"
+alias c='clear'

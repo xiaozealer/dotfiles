@@ -1,8 +1,15 @@
- {                
-      "coc.preferences.formatOnSaveFiletypes": ["css", "json", "markdown", "python"],
-      "diagnostic.errorSign": "✘",
-     "diagnostic.warningSign": "⚠",
-     "diagnostic.infoSign": "I",
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/usr/local/bin/black",
-  }
+{
+   "coc.preferences.formatOnSaveFiletypes": [
+      "css",
+      "json",
+      "markdown",
+      "python"
+   ],
+   "diagnostic.errorSign": "✘",
+   "diagnostic.warningSign": "⚠",
+   "diagnostic.infoSign": "I",
+   "python.formatting.provider": "black",
+   "python.formatting.blackPath": "/usr/local/bin/black",
+   "clangd.path": "/Users/zile/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+   "explorer.icon.enableNerdfont": true
+}

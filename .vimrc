@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
@@ -9,7 +10,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'morhetz/gruvbox'
@@ -17,6 +18,7 @@ call plug#end()
 
 " Plug 'joshdick/onedark.vim'
 " let g:auto_save = 1
+set encoding=UTF-8
 syntax on
 " colorscheme onedark
 " colorscheme molokai
@@ -31,6 +33,7 @@ set ignorecase
 set smartcase
 set scrolloff=10
 set hlsearch
+set showcmd
 set ruler
 set number
 set noswapfile
