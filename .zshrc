@@ -6,14 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-alias ws='ssh -CAXY ws.xiaozile.ws2@hh-b-internal.brainpp.cn'
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #export LSCOLORS=GxFxCxDxBxegedabagace
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 # export PATH="/Users/zile/anaconda3/bin:$PATH"  # commented out by conda initialize
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -80,6 +78,7 @@ plugins=(
   zsh-autosuggestions
 )
 
+export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -90,11 +89,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 #autoload -U promptinit; promptinit
 #prompt pure
 
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+# export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -130,13 +129,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export BAT_THEME="TwoDark"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias ws10="ssh xiaozile@10.122.94.10"
 alias ws197="ssh xiaozile@10.122.94.197"
+alias ws='ssh -CAXY ws.xiaozile.ws2@hh-b-internal.brainpp.cn'
 alias c='clear'
