@@ -42,10 +42,10 @@ if [ -e ~/.vim/plugged/coc.nvim ]; then
 fi
 
 # coc plugins
-if [! -e ~/.config ]; then
+if [ ! -e ~/.config ]; then
   mkdir ~/.config
 fi
-ln -s -f ~/configs/coc .config/coc
+ln -s -f ~/configs/coc ~/.config/coc
 
 vim -c "CocInstall"
 
