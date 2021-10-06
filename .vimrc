@@ -19,22 +19,27 @@ call plug#end()
 " let g:auto_save = 1
 syntax on
 " colorscheme onedark
-" colorscheme darcula
 " colorscheme molokai
 colorscheme gruvbox
 set incsearch
-" set cc=80
+set exrc "auto source .vimrc file
+" set colorcolumn=80
 set termguicolors
+set nowrap
+" the two have to be togther to work
 set ignorecase
 set smartcase
+set scrolloff=10
 set hlsearch
 set ruler
 set number
+set noswapfile
+set nobackup
 filetype indent on
 filetype plugin on
 set autoindent
 set cursorline
-
+let mapleader = " "
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 
 autocmd WinEnter * setlocal cursorline
@@ -54,7 +59,7 @@ let g:airline_powerline_fonts = 2
 noremap <F9> :vertical resize +10<CR>
 noremap <F8> :vertical resize -10<CR>
 
-nnoremap <C-b> :Buffers<Cr>
+nnoremap <leader>b :Buffers<Cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-a> :Rg<Cr>
 " config for fzf
@@ -62,7 +67,7 @@ let g:fzf_layout = {'down':'40%'}
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 " coc-explorer
-nnoremap <space>e :CocCommand explorer<CR>
+nnoremap <leader>e :CocCommand explorer<CR>
 " config for mapping tab
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -140,7 +145,6 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " configure cursor
-
 if &term =~ "xterm\\|rxvt"
    " use an orange cursor in insert mode
    silent! let &t_SI = "\e[5 q\e]12;orange\x7"
