@@ -63,7 +63,8 @@ let g:airline_powerline_fonts = 2
 
 noremap <F9> :vertical resize +10<CR>
 noremap <F8> :vertical resize -10<CR>
-
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap <leader>b :Buffers<Cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-a> :Rg<Cr>
