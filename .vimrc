@@ -10,7 +10,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'morhetz/gruvbox'
@@ -55,6 +54,8 @@ set tabstop=4
 " config for quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']
 
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 " config for airline
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 2
@@ -82,7 +83,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
 "config for commentnerd
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
