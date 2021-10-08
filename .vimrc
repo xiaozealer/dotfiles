@@ -22,6 +22,8 @@ syntax on
 " colorscheme onedark
 " colorscheme molokai
 colorscheme gruvbox
+set background=dark
+
 set incsearch
 set exrc "auto source .vimrc file
 " set colorcolumn=80
@@ -62,7 +64,8 @@ let g:airline_powerline_fonts = 2
 
 noremap <F9> :vertical resize +10<CR>
 noremap <F8> :vertical resize -10<CR>
-
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap <leader>b :Buffers<Cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-a> :Rg<Cr>
