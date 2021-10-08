@@ -26,7 +26,7 @@ fi
 # vim plug
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
   echo "vim plug exists! skipping...."
 fi
@@ -56,4 +56,17 @@ if [ ! -e ~/.tmux ]; then
   ln -s -f .tmux/.tmux.conf
   cp .tmux/.tmux.conf.local .
   echo "set -g default-terminal \"xterm-256color\"" >> ~/.tmux.conf
+fi
+# setup pyenv
+if [ ! -e ~/.pyenv ]; then
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  cd ~/.pyenv && src/configure && make -C src
+  if [ ! -e ~/bin ]; then
+    mkdir bin
+  fi
+  ln -s ~/.pyenv/bin/pyenv ~/bin/pyenv
+  echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
+  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
+  echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+  echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 fi
