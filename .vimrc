@@ -4,6 +4,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'scrooloose/nerdcommenter'
@@ -28,7 +29,7 @@ set incsearch
 set exrc "auto source .vimrc file
 " set colorcolumn=80
 set termguicolors
-set nowrap
+" set nowrap
 " the two have to be togther to work
 set ignorecase
 set smartcase
