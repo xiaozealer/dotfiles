@@ -5,6 +5,7 @@
     "diagnostic.infoSign": "ℹ",
     "suggest.maxCompleteItemCount": 20,
     "python.formatting.provider": "black",
+    "coc.preferences.colorSupport":true,
     "python.formatting.blackPath": "/usr/local/bin/black",
     "explorer.icon.enableNerdfont": true,
     "suggest.completionItemKindLabels": {

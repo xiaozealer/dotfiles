@@ -37,7 +37,7 @@ vim -c "PlugInstall"
 curl -sL install-node.now.sh/lts | bash
 # symbol link everything
 if [ -e ~/.vim/plugged/coc.nvim ]; then
-  ln -s -f ~/configs/.vim/coc.vim ~/.vim/plugged/coc.nvim/autoload/coc.vim
+  ln -s -f ~/configs/.vim/coc.vim ~/.vim/autoload/coc.vim
   ln -s -f ~/configs/.vim/coc-settings.json ~/.vim/coc-settings.json
 fi
 
