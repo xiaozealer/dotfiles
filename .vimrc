@@ -11,7 +11,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'morhetz/gruvbox'
