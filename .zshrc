@@ -133,10 +133,11 @@ unset __conda_setup
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export BAT_THEME="TwoDark"
-
+export VIMRUNTIME=/home/xiaozile/apps/vim/runtime
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias ws10="ssh xiaozile@10.122.94.10"
 alias ws197="ssh xiaozile@10.122.94.197"
 alias ws='ssh -CAXY ws.xiaozile.ws2@hh-b-internal.brainpp.cn'
 alias c='clear'
+eval "$(pyenv init -)"

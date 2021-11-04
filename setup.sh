@@ -41,14 +41,6 @@ if [ -e ~/.vim/plugged/coc.nvim ]; then
   ln -s -f ~/configs/.vim/coc-settings.json ~/.vim/coc-settings.json
 fi
 
-# coc plugins
-if [ ! -e ~/.config ]; then
-  mkdir ~/.config
-fi
-ln -s -f ~/configs/coc ~/.config/coc
-
-vim -c "CocInstall"
-
 # setup tmux config
 if [ ! -e ~/.tmux ]; then
   cd
@@ -70,3 +62,5 @@ if [ ! -e ~/.pyenv ]; then
   echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
   echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 fi
+
+
