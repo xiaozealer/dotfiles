@@ -35,10 +35,9 @@
         "typeParameter": "\uf728",
         "default": "\uf29c"
     },
-    // coc-settings.json
 {
   "explorer.keyMappings.global": {
-    "i": false, // cancel default mapkey
+    "i": false, 
     "<c-o>": "noop",
 
     "*": "toggleSelection",
