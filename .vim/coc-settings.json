@@ -7,6 +7,7 @@
     "python.formatting.provider": "black",
     "coc.preferences.colorSupport": true,
     "python.formatting.blackPath": "/usr/local/bin/black",
+    "coc.preferences.jumpCommand": "tabe",
     "explorer.icon.enableNerdfont": true,
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
