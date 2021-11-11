@@ -50,7 +50,10 @@ hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 if executable('rg')
    let g:rg_derive_root='true'
 endif
-
+hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
+hi TabLine ctermfg=Blue ctermbg=Yellow
+hi TabLineSel ctermfg=Red ctermbg=Yellow
+hi Title ctermfg=LightBlue ctermbg=Magenta
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 "config for indent
