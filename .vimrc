@@ -25,9 +25,7 @@ set encoding=UTF-8
 " colorscheme molokai
 colorscheme gruvbox
 set background=dark
-
 syntax on
-
 set incsearch
 set exrc "auto source .vimrc file
 " set colorcolumn=80
