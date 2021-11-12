@@ -17,13 +17,16 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Plug 'joshdick/onedark.vim'
+set nocompatible
+
 " let g:auto_save = 1
 set encoding=UTF-8
-syntax on
 " colorscheme onedark
 " colorscheme molokai
 colorscheme gruvbox
 set background=dark
+
+syntax on
 
 set incsearch
 set exrc "auto source .vimrc file
