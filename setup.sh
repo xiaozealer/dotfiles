@@ -32,6 +32,7 @@ else
 fi
 # install vim plugins
 ln -s -f ~/configs/.vimrc ~/.vimrc
+ln -s -f ~/configs/.vim/plugin ~/.vim/plugin
 vim -c "PlugInstall"
 
 curl -sL install-node.now.sh/lts | bash
