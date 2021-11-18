@@ -18,7 +18,7 @@ call plug#end()
 
 " Plug 'joshdick/onedark.vim'
 set nocompatible
-
+set mouse=a
 " let g:auto_save = 1
 set encoding=UTF-8
 " colorscheme onedark
