@@ -18,12 +18,11 @@ call plug#end()
 
 " Plug 'joshdick/onedark.vim'
 set nocompatible
-set mouse=a
 " let g:auto_save = 1
 set encoding=UTF-8
 " colorscheme onedark
-" colorscheme molokai
-colorscheme gruvbox
+colorscheme molokai
+" colorscheme gruvbox
 set background=dark
 syntax on
 set incsearch
@@ -47,7 +46,7 @@ set autoindent
 set cursorline
 let mapleader = " "
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
-
+autocmd BufWrite * call CocAction('format')
 if executable('rg')
    let g:rg_derive_root='true'
 endif
@@ -85,10 +84,8 @@ let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --ma
 " coc-explorer
 nnoremap <leader>e :CocCommand explorer<CR>
 " config for mapping tab
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
-vnoremap <Tab> >gV
-vnoremap <S-Tab> <gV
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
 
 " config for mapping pane switch
 map <C-j> <C-W>j
