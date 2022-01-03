@@ -47,7 +47,7 @@ set autoindent
 set cursorline
 let mapleader = " "
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
-
+autocmd BufWrite * call CocAction('format')
 if executable('rg')
    let g:rg_derive_root='true'
 endif
