@@ -26,6 +26,7 @@ colorscheme molokai
 set background=dark
 syntax on
 set incsearch
+" set mouse=a
 set exrc "auto source .vimrc file
 " set colorcolumn=80
 set termguicolors
@@ -76,7 +77,7 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap <leader>b :Buffers<Cr>
 nnoremap <C-p> :Files<Cr>
-nnoremap <leader>a :Rg<Cr>
+nnoremap <leader>/ :Rg<Cr>
 " config for fzf
 let g:fzf_layout = {'down':'40%'}
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
