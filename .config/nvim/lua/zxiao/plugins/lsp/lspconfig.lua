@@ -11,6 +11,7 @@ return {
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local telescope = require("telescope.builtin")
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -20,19 +21,25 @@ return {
 
 			-- set keybinds
 			opts.desc = "Show LSP references"
-			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+			keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
 			opts.desc = "Go to declaration"
 			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
 			opts.desc = "Show LSP definitions"
-			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+			keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+			-- keymap.set("n", "gd", function()
+			-- 	telescope.lsp_definitions({ jump_type = "tab", reuse_win = true })
+			-- end, opts) -- show lsp definitions
+			-- keymap.set("n", "gd", <cmd>Telescope lsp_definitions({jump_type="tab"})<CR>', opts) -- show lsp definitions
 
 			opts.desc = "Show LSP implementations"
-			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+			keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+			-- keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
 			opts.desc = "Show LSP type definitions"
-			keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+			keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+			-- keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
 			opts.desc = "See available code actions"
 			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -71,17 +78,17 @@ return {
 		end
 
 		-- configure python server
-		lspconfig["jedi_language_server"].setup({
+		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = {
-				gopls = { completeUnimported = true, analyses = { unusedparams = true } },
-			},
 		})
 		-- configure go server
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				gopls = { completeUnimported = true, analyses = { unusedparams = true } },
+			},
 		})
 
 		-- configure lua server (with special settings)

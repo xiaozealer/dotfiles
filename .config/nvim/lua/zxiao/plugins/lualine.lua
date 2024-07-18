@@ -13,8 +13,25 @@ return {
 			red = "#FF4A4A",
 			fg = "#c3ccdc",
 			bg = "#112638",
+			-- bg = "#112638",
 			inactive_bg = "#2c3043",
 		}
+
+		local function get_venv()
+			local variables = { "CONDA_DEFAULT_ENV", "VIRTUAL_ENV", "PYENV_VERSION" }
+			for _, var in ipairs(variables) do
+				local venv = os.getenv(var)
+				if venv then
+					if string.find(venv, "/") then
+						for w in venv:gmatch("([^/]+)") do
+							venv = w
+						end
+					end
+					return string.format("%s", venv)
+				end
+			end
+			return nil
+		end
 
 		local my_lualine_theme = {
 			normal = {
@@ -56,15 +73,40 @@ return {
 				-- theme = my_lualine_theme,
 			},
 			sections = {
+				lualine_c = {
+					{
+						"filename",
+						path = 3,
+					},
+				},
 				lualine_x = {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
+					{
+						get_venv,
+						color = { fg = "#10ECE6A" },
+					},
 					-- { "encoding" },
 					-- { "fileformat" },
 					{ "filetype" },
+				},
+				lualine_z = {
+					"location",
+					{
+						function()
+							local starts = vim.fn.line("v")
+							local ends = vim.fn.line(".")
+							local count = starts <= ends and ends - starts + 1 or starts - ends + 1
+							local wc = vim.fn.wordcount()
+							return count .. ":" .. wc["visual_chars"]
+						end,
+						cond = function()
+							return vim.fn.mode():find("[Vv]") ~= nil
+						end,
+					},
 				},
 			},
 		})

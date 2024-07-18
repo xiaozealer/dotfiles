@@ -1,6 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "DaikyXendo/nvim-material-icon" },
 	config = function()
 		local nvimtree = require("nvim-tree")
 
@@ -23,14 +24,14 @@ return {
 				indent_markers = {
 					enable = true,
 				},
-				icons = {
-					glyphs = {
-						folder = {
-							arrow_closed = "", -- arrow when folder is closed
-							arrow_open = "", -- arrow when folder is open
-						},
-					},
-				},
+				-- icons = {
+				-- 	glyphs = {
+				-- 		folder = {
+				-- 			arrow_closed = "", -- arrow when folder is closed
+				-- 			arrow_open = "", -- arrow when folder is open
+				-- 		},
+				-- 	},
+				-- },
 			},
 			-- disable window_picker for
 			-- explorer to work well with

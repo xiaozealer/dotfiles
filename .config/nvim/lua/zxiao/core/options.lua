@@ -39,3 +39,5 @@ opt.iskeyword:append("-")
 -- turn off swapfile
 opt.swapfile = false
 
+-- blinking cursor
+-- " enable vertical cursor when in insert mode

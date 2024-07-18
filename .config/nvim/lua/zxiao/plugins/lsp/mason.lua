@@ -30,7 +30,8 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				"jedi_language_server",
+				"pyright",
+				"gopls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -40,6 +41,11 @@ return {
 			ensure_installed = {
 				"stylua", -- lua formatter
 				"black", -- python formatter
+				"revive", -- golang linter
+				"yamllint", -- yaml linter
+				"prettier", -- yaml formatter
+				"isort", -- yaml formatter
+				"pylint", -- python linter
 			},
 		})
 	end,
