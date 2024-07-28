@@ -33,7 +33,7 @@ return {
 				-- Benefit of using Noice for this is the routing and consistent history view
 				enabled = true,
 				view = "notify",
-				timeout = 2000,
+				timeout = 1000,
 				stages = "static",
 			},
 			routes = {
