@@ -1,5 +1,6 @@
 # import = ["~/.config/alacritty/catppuccin/catppuccin-macchiato.toml"]
 import = ["~/.config/alacritty/cyberdream.toml"]
+# import = ["~/.config/alacritty/cyberdream.toml"]
 
 live_config_reload = true
 [env]

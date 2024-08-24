@@ -6,5 +6,13 @@ return {
 		-- Only one of these is needed, not both.
 		"nvim-telescope/telescope.nvim", -- optional
 	},
-	config = true,
+	config = function()
+		local neogit = require("neogit")
+		neogit.setup({
+			-- kind = "auto",
+		})
+	end,
+	keys = {
+		{ "<leader>lg", "<cmd>Neogit<cr>", desc = "Neogit" },
+	},
 }

@@ -2,7 +2,7 @@ local opt = vim.opt
 
 -- line numbers
 opt.number = true
-
+opt.relativenumber = true
 -- tabs and & indent
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -38,6 +38,9 @@ opt.iskeyword:append("-")
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- for disable mode in lualine
+opt.showmode = false
 
 -- blinking cursor
 -- " enable vertical cursor when in insert mode

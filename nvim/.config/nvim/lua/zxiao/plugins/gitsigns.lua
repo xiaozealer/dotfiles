@@ -44,13 +44,13 @@ return {
 				map("n", "<leader>hR", gitsigns.reset_buffer, "reset_buffer")
 				map("n", "<leader>hp", gitsigns.preview_hunk, "preview_hunk")
 				map("n", "<leader>hb", function()
-					gitsigns.blame_line({ full = true }, "blame_line")
-				end)
+					gitsigns.blame_line({ full = true })
+				end, "Blame line")
 				map("n", "<leader>tb", gitsigns.toggle_current_line_blame, "blame_current_line")
 				map("n", "<leader>hd", gitsigns.diffthis, "diff")
 				map("n", "<leader>hD", function()
 					gitsigns.diffthis("~")
-				end)
+				end, "Diff this ~")
 				map("n", "<leader>td", gitsigns.toggle_deleted, "deleted")
 
 				-- Text object
