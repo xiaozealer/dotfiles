@@ -13,12 +13,13 @@ return {
 			backends = { "lsp", "treesitter", "markdown", "man" },
 			show_guides = true,
 			layout = {
-				resize_to_content = false,
+				resize_to_content = true,
 				win_opts = {
 					winhl = "Normal:NormalFloat,FloatBorder:NormalFloat,SignColumn:SignColumnSB",
 					signcolumn = "yes",
 					statuscolumn = " ",
 				},
+				default_direction = "prefer_left",
 			},
       -- stylua: ignore
       guides = {
@@ -27,7 +28,6 @@ return {
         nested_top = "│ ",
         whitespace = "  ",
       },
-			default_direction = "prefer_left",
 			on_attach = function(bufnr)
 				-- Jump forwards/backwards with '{' and '}'
 				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
