@@ -465,13 +465,10 @@ set-option -g status-interval 1
 set-option -g automatic-rename on
 # set-option -g automatic-rename-format '#{b:pane_current_path}'
 set -g status-right '📁 #{b:pane_current_path}'
-
-
 set -agF status-right "#{E:@catppuccin_status_battery}"
 
 set -g @catppuccin_status_modules_right "application battery date_time"
 set -g @catppuccin_date_time_text "%H:%M | %d %b"
-run ~/.tmux/plugins/tmux/catppuccin.tmux
 
 # -- custom variables ----------------------------------------------------------
 
