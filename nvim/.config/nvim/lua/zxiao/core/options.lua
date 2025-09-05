@@ -2,7 +2,6 @@ local opt = vim.opt
 
 -- line numbers
 opt.number = true
-opt.relativenumber = true
 -- tabs and & indent
 opt.tabstop = 2
 opt.shiftwidth = 2

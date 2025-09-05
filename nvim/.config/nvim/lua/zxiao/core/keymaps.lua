@@ -24,7 +24,7 @@ keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>")
 keymap.set("n", "<leader>x", ":NvimTreeToggle<CR>")
 
 -- lazy
-keymap.set("n", "<leader>la", ":Lazy<CR>")
+keymap.set("n", "<leader>lz", ":Lazy<CR>")
 
 -- nvim treesitter context
 -- vim.keymap.set("n", "[c", function()

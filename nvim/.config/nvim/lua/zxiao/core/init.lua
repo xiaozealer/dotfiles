@@ -1,2 +1,5 @@
 require("zxiao.core.keymaps")
 require("zxiao.core.options")
+require("zxiao.core.lsp")
+require("zxiao.core.mason-path")
+require("zxiao.core.autocmds")
