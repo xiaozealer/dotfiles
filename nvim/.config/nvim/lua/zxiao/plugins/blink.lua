@@ -39,7 +39,19 @@ return {
 				},
 				cmdline = {
 					enabled = true,
-					completion = { menu = { auto_show = true } },
+					keymap = {
+						-- use the same Tab/S-Tab/CR as insert mode
+						preset = "inherit",
+						-- accept the highlighted item AND run it; if nothing is
+						-- selected, fall back to executing the typed command line
+						["<CR>"] = { "accept_and_enter", "fallback" },
+					},
+					completion = {
+						menu = { auto_show = true },
+						-- don't preselect: the first <Tab> lands on item 1, and
+						-- navigating doesn't rewrite the cmdline until you accept
+						list = { selection = { preselect = false, auto_insert = false } },
+					},
 				},
 				completion = {
 					menu = {

@@ -174,7 +174,7 @@ local function lsp_info()
 	print("")
 
 	-- Basic info
-	print("󰈙 Language client log: " .. vim.lsp.get_log_path())
+	print("󰈙 Language client log: " .. vim.lsp.log.get_filename())
 	print("󰈔 Detected filetype: " .. vim.bo.filetype)
 	print("󰈮 Buffer: " .. bufnr)
 	print("󰈔 Root directory: " .. (vim.fn.getcwd() or "N/A"))
