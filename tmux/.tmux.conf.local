@@ -452,8 +452,10 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @continuum-restore 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'tmux-plugins/tmux-battery'
 set -g mouse on
 set -g default-terminal "tmux-256color"
+set -as terminal-features ",xterm-256color:RGB"
 
 set -g @catppuccin_flavor "macchiato"
 
@@ -462,14 +464,22 @@ set -g status-left-length 100
 set -g status-left "#{E:@catppuccin_status_session}"
 set -ogq @catppuccin_window_text " #W"
 set -ogq @catppuccin_window_current_text " #W"
-set-option -g status-interval 1
+set-option -g status-interval 5
 set-option -g automatic-rename on
 # set-option -g automatic-rename-format '#{b:pane_current_path}'
-set -g status-right '📁 #{b:pane_current_path}'
-set -agF status-right "#{E:@catppuccin_status_battery}"
+set -g status-right "#{E:@catppuccin_status_directory}"
+set -ag status-right "#{E:@catppuccin_status_date_time}"
+set -ag status-right "#{E:@catppuccin_status_battery}"
 
-set -g @catppuccin_status_modules_right "application battery date_time"
-set -g @catppuccin_date_time_text "%H:%M | %d %b"
+set -g @catppuccin_date_time_text "%d %b | %H:%M"
+
+# Battery: catppuccin's module relies on tmux-battery's #{battery_*} tokens being
+# string-substituted at plugin load, but oh-my-tmux loads plugins last, so the
+# substitution never reaches the value behind #{E:@catppuccin_status_battery}.
+# Instead, point catppuccin's icon/text at tmux-battery's scripts directly via #()
+# (re-run every status-interval). set -og here wins because catppuccin uses -o too.
+set -g @catppuccin_battery_icon "#(~/.tmux/plugins/tmux-battery/scripts/battery_icon.sh) "
+set -g @catppuccin_battery_text " #(~/.tmux/plugins/tmux-battery/scripts/battery_percentage.sh)"
 
 # -- custom variables ----------------------------------------------------------
 
