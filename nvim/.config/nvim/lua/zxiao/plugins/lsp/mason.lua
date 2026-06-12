@@ -33,8 +33,11 @@ return {
 				"pyright",
 				"gopls",
 			},
-			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
+			-- Servers are enabled explicitly via vim.lsp.enable() in
+			-- core/lsp.lua, so don't let mason-lspconfig auto-enable them too
+			-- (avoids double-enabling). automatic_installation was a v1 option
+			-- and is a no-op in mason-lspconfig v2; ensure_installed handles it.
+			automatic_enable = false,
 		})
 
 		mason_tool_installer.setup({

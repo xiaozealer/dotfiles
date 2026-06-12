@@ -51,7 +51,8 @@ return {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+					-- ["cmp.entry.get_documentation"] override removed: this config
+					-- uses blink.cmp, not nvim-cmp, so it was a no-op.
 				},
 			},
 			-- you can enable a preset for easier configuration
