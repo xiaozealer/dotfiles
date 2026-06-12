@@ -326,19 +326,6 @@ local function formatter_status()
 	return "󰉿 " .. table.concat(formatter_names, ",")
 end
 
-local function linter_status()
-	local ok, lint = pcall(require, "lint")
-	if not ok then
-		return ""
-	end
-
-	local linters = lint.linters_by_ft[vim.bo.filetype] or {}
-	if #linters == 0 then
-		return ""
-	end
-
-	return "󰁨 " .. table.concat(linters, ",")
-end
 -- Safe wrapper functions for statusline
 local function safe_git_branch()
 	local ok, result = pcall(git_branch)
@@ -355,15 +342,9 @@ local function safe_formatter_status()
 	return ok and result or ""
 end
 
-local function safe_linter_status()
-	local ok, result = pcall(linter_status)
-	return ok and result or ""
-end
-
 _G.git_branch = safe_git_branch
 _G.lsp_status = safe_lsp_status
 _G.formatter_status = safe_formatter_status
-_G.linter_status = safe_linter_status
 
 -- THEN set the statusline
 vim.opt.statusline = table.concat({
@@ -372,7 +353,6 @@ vim.opt.statusline = table.concat({
 	"%m", -- Modified flag
 	"%r", -- Readonly flag
 	"%=", -- Right align
-	"%{v:lua.linter_status()}", -- Linter status
 	"%{v:lua.formatter_status()}", -- Formatter status
 	"%{v:lua.lsp_status()}", -- LSP status
 	" %l:%c", -- Line:Column

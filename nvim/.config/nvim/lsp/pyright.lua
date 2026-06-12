@@ -15,7 +15,7 @@ return {
 			analysis = {
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
-				extraPaths = { "/Users/zxiao/src/spark-3.5.5-bin-hadoop3/python" },
+				extraPaths = { "/Users/zxiao/src/spark-3.5.5-bin-hadoop3/python", "/Users/zxiao/src/nd_pyspark" },
 			},
 		},
 	},

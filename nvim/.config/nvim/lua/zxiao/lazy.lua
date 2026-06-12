@@ -13,8 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "zxiao.plugins" }, { import = "zxiao.plugins.lsp" } }, {
 	install = {
-		colorscheme = { "tokyonight" },
-		-- colorscheme = { "nightfly" },
+		colorscheme = { "catppuccin" },
 	},
 	checker = {
 		enabled = true,

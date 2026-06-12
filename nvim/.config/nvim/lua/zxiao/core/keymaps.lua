@@ -16,13 +16,6 @@ keymap.set("n", "<Tab>", ":BufferNext<CR>")
 keymap.set("n", "<S-Tab>", ":BufferPrevious<CR>")
 keymap.set("n", "<C-c>", ":BufferClose<CR>")
 
--- vim-maximizer
-keymap.set("n", "<C-w>z", ":MaximizerToggle<CR>") -- toggle split window maximization
-
--- nvim tree
-keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>")
-keymap.set("n", "<leader>x", ":NvimTreeToggle<CR>")
-
 -- lazy
 keymap.set("n", "<leader>lz", ":Lazy<CR>")
 

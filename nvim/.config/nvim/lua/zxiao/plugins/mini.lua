@@ -3,7 +3,7 @@ return {
 	version = "*",
 	config = function()
 		local hipatterns = require("mini.hipatterns")
-		require("mini.comment").setup()
+		-- mini.comment removed: Neovim provides gc/gcc natively (0.10+), same keymaps
 		-- require("mini.animate").setup()
 		-- require("mini.surround").setup()
 		require("mini.hipatterns").setup({

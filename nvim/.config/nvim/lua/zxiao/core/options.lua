@@ -41,6 +41,7 @@ opt.swapfile = false
 -- for disable mode in lualine
 opt.showmode = false
 
+vim.lsp.log.set_level("off")
 -- blinking cursor
 -- " enable vertical cursor when in insert mode
 -- opt.guicursor = "n-v-c-s:block,i:block-blinkwait100-blinkoff500-blinkon500"

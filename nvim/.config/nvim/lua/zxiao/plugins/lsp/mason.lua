@@ -40,12 +40,10 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"stylua", -- lua formatter
-				"black", -- python formatter
-				"revive", -- golang linter
-				"yamllint", -- yaml linter
-				"prettier", -- yaml formatter
-				"isort", -- yaml formatter
-				"pylint", -- python linter
+				-- ruff (python formatter/import sorting) is installed via brew, not Mason:
+				-- Mason installs ruff through pip, which is pinned to Nextdoor's private
+				-- CodeArtifact index and can't fetch it. conform finds the brew binary on PATH.
+				"prettier", -- json/markdown formatter
 			},
 		})
 	end,
