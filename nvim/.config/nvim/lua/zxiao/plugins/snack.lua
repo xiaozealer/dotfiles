@@ -448,13 +448,6 @@ return {
 			mode = { "n", "v" },
 		},
 		{
-			"<leader>gg",
-			function()
-				Snacks.lazygit()
-			end,
-			desc = "Lazygit",
-		},
-		{
 			"<leader>un",
 			function()
 				Snacks.notifier.hide()
@@ -496,11 +489,12 @@ return {
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "VeryLazy",
 			callback = function()
-				-- Skip the `snacks.image` health check. It requires the kitty
-				-- graphics protocol (kitty/wezterm/ghostty) plus magick/gs/tectonic/
-				-- mmdc, none of which apply in Alacritty, so it can never pass here.
+				-- Skip health checks for optional Snacks features we intentionally
+				-- don't use: image rendering cannot work in Alacritty, and lazygit
+				-- is not installed.
 				pcall(function()
 					Snacks.image.meta.health = false
+					Snacks.lazygit.meta.health = false
 				end)
 
 				-- Setup some globals for debugging (lazy-loaded)
