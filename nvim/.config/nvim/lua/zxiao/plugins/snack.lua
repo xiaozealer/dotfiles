@@ -7,6 +7,10 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
 		explorer = { enabled = true, focus = "list" },
+		-- Alacritty doesn't support the kitty graphics protocol, so inline image
+		-- rendering can never work here. Disable it (health check is suppressed in
+		-- `init` below so `:checkhealth snacks` stays clean).
+		image = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = true },
 		notifier = {
@@ -514,6 +518,13 @@ return {
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "VeryLazy",
 			callback = function()
+				-- Skip the `snacks.image` health check. It requires the kitty
+				-- graphics protocol (kitty/wezterm/ghostty) plus magick/gs/tectonic/
+				-- mmdc, none of which apply in Alacritty, so it can never pass here.
+				pcall(function()
+					Snacks.image.meta.health = false
+				end)
+
 				-- Setup some globals for debugging (lazy-loaded)
 				_G.dd = function(...)
 					Snacks.debug.inspect(...)

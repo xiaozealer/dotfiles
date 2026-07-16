@@ -31,6 +31,7 @@ return {
 					"bash",
 					"lua",
 					"vim",
+					"regex",
 					"dockerfile",
 					"gitignore",
 					"go",

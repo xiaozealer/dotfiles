@@ -1,5 +1,21 @@
 local opt = vim.opt
 
+-- Disable optional remote-host providers we don't use. Keeps `:checkhealth`
+-- clean instead of warning about missing perl/ruby/python3/node `neovim` packages.
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
+
+-- gopls advertises the `gotmpl` filetype; register it so `:checkhealth vim.lsp`
+-- doesn't warn about an unknown filetype (also attaches gopls to Go templates).
+vim.filetype.add({
+	extension = {
+		gotmpl = "gotmpl",
+		tmpl = "gotmpl",
+	},
+})
+
 -- line numbers
 opt.number = true
 -- tabs and & indent

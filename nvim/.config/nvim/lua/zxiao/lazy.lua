@@ -15,6 +15,11 @@ require("lazy").setup({ { import = "zxiao.plugins" }, { import = "zxiao.plugins.
 	install = {
 		colorscheme = { "catppuccin" },
 	},
+	-- No plugins here use luarocks; disabling avoids the `:checkhealth lazy`
+	-- warnings about a missing Lua 5.1 / lua5.1 interpreter.
+	rocks = {
+		enabled = false,
+	},
 	checker = {
 		enabled = true,
 		notify = false,
