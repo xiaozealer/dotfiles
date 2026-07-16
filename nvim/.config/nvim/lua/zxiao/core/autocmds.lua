@@ -183,7 +183,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	callback = function()
-		pcall(vim.treesitter.start)
+	callback = function(ev)
+		-- Enable treesitter highlighting (the nvim-treesitter `main` branch relies
+		-- on this rather than a highlight module).
+		local ok = pcall(vim.treesitter.start)
+		-- Treesitter-based indentation, only when a parser actually started.
+		if ok then
+			vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		end
 	end,
 })

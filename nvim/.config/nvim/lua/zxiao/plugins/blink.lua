@@ -6,7 +6,9 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 		-- event = "InsertEnter",
-		version = "*",
+		-- Pin to the v1 stable line: blink.cmp v2 is under active development
+		-- with breaking changes, so avoid `version = "*"` jumping to it.
+		version = "1.*",
 		config = function()
 			-- vim.cmd('highlight Pmenu guibg=none')
 			-- vim.cmd('highlight PmenuExtra guibg=none')
@@ -15,7 +17,13 @@ return {
 
 			require("blink.cmp").setup({
 				snippets = { preset = "luasnip" },
-				signature = { enabled = true },
+				signature = {
+					enabled = true,
+					-- On Neovim 0.12 blink's treesitter highlighter can crash with
+					-- "attempt to call method 'range' (a nil value)"; disable it in
+					-- the signature popup.
+					window = { treesitter_highlighting = false },
+				},
 				appearance = {
 					use_nvim_cmp_as_default = false,
 					nerd_font_variant = "normal",
@@ -75,6 +83,9 @@ return {
 						},
 						auto_show = true,
 						auto_show_delay_ms = 500,
+						-- See signature note above: avoids the treesitter highlighter
+						-- crash in the documentation popup on Neovim 0.12.
+						treesitter_highlighting = false,
 					},
 				},
 			})
