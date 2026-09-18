@@ -1,0 +1,18 @@
+# Cursor: solid block, no blink
+cursor-style = block
+cursor-style-blink = false
+
+# Stop shell integration from switching the cursor to a bar at the prompt
+shell-integration-features = no-cursor
+theme = tokyo-night-storm-alacritty
+
+# Neovim needs Option to send Alt (barbar <A-,> / <A-1> ... keymaps)
+# Matches Alacritty's option_as_alt = "Both"
+macos-option-as-alt = true
+
+# Font, same as alacritty.toml (MesloLGL Nerd Font @ 14, Regular/Bold/Italic/Bold Italic)
+font-family = MesloLGL Nerd Font
+font-size = 14
+
+
+
