@@ -456,6 +456,18 @@ set -g @plugin 'tmux-plugins/tmux-battery'
 set -g mouse on
 set -g default-terminal "tmux-256color"
 set -as terminal-features ",xterm-256color:RGB"
+# Ghostty: tmux 3.7 has no built-in entry for xterm-ghostty, so it only
+# auto-detects RGB (via COLORTERM). Declare the rest of what Ghostty supports:
+# usstyle = undercurl + underline colour (nvim LSP diagnostics)
+# extkeys = CSI u extended keys (Ctrl+Shift and <A-...> bindings)
+# sync    = synchronised output, removes redraw flicker
+set -as terminal-features ",xterm-ghostty:RGB:usstyle:extkeys:sync:hyperlinks:osc7:strikethrough"
+# .tmux.conf:20 gates `extended-keys on` behind TERM_PROGRAM=mintty|iTerm,
+# so Ghostty never gets it. Required for Ctrl+Shift and <A-...> keys.
+set -g extended-keys on
+# Required by snacks.nvim image preview and any plugin that emits raw OSC
+# sequences through tmux.
+set -g allow-passthrough on
 
 set -g @catppuccin_flavor "macchiato"
 
